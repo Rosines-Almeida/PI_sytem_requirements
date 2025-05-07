@@ -32,9 +32,6 @@ export class FormularioComponent {
     requisitos.push(novoRequisito);
     localStorage.setItem('requisitos', JSON.stringify(requisitos));
 
-   
-
-    alert('Requisito adicionado com sucesso!');
 
     const novoRequisitoBack: Requisito = {
       tipo: this.tipo,
