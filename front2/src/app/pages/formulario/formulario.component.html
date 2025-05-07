@@ -1,0 +1,41 @@
+<h2>Adicionar Requisito</h2>
+<div>
+<form #form="ngForm" (ngSubmit)="enviarFormulario()" >
+    <label>
+        Tipo:
+        <br />
+        <label class="tipo-input" >
+          <input class="tipo-input" type="radio"  name="tipo"  [(ngModel)]="tipo" value="Funcional" />
+          Funcional
+        </label>
+        <label>
+          <input  class="tipo-input" type="radio" name="tipo" [(ngModel)]="tipo" value="Não funcional" />
+          Não funcional
+        </label>
+      </label>
+  <br /><br />
+
+  <label>
+    Selecione o projeto:
+    <select [(ngModel)]="projeto" name="projeto" required>
+      <option value="" disabled selected>Selecione um projeto</option>
+      <option value="Projeto A">Projeto A</option>
+      <option value="Projeto B">Projeto B</option>
+      <option value="Projeto C">Projeto C</option>
+    </select>
+  </label>
+  <br /><br />
+  <label>
+    Nome do requisito:
+    <input type="text" [(ngModel)]="titulo" name="titulo" required />
+  </label>
+  <br /><br />
+  <label>
+    Descrição :
+    <textarea [(ngModel)]="descricao" name="descricao" required></textarea>
+  </label>
+  <br /><br />
+
+  <button type="submit" [disabled]="form.invalid" type="submit">Enviar</button>
+</form>
+</div>

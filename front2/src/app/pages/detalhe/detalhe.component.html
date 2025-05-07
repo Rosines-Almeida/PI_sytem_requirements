@@ -1,0 +1,16 @@
+<div class="detalhe-container">
+  <h2>Detalhe do Requisito</h2>
+
+  <div class="card-detalhe">
+    <p><strong>Título:</strong> {{ requisito?.titulo }}</p>
+    <p><strong>Projeto:</strong> {{ requisito?.projeto }}</p>
+    <p><strong>Tipo:</strong> {{ requisito?.tipo }}</p>
+    <p><strong>Data de Entrega:</strong> {{ requisito?.date | date: 'dd/MM/yyyy' }}</p>
+    <p><strong>Descrição:</strong></p>
+    <div class="descricao">{{ requisito?.descricao }}</div>
+  </div>
+
+  <button class="voltar" routerLink="/painel">
+    <i class="fas fa-arrow-left"></i> Voltar ao Painel
+  </button>
+</div>

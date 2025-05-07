@@ -1,0 +1,42 @@
+<h2>Painel de Requisitos</h2>
+
+<!-- Filtros -->
+<div class="filtros">
+  <label>
+    Projeto:
+    <select [(ngModel)]="filtroProjeto">
+      <option value="">Todos</option>
+      <option *ngFor="let projeto of projetos" [value]="projeto">{{ projeto }}</option>
+    </select>
+  </label>
+
+  <label>
+    Tipo:
+    <select [(ngModel)]="filtroTipo">
+      <option value="">Todos</option>
+      <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
+    </select>
+  </label>
+
+  <button (click)="filtrar()">
+    <i class="fas fa-filter"></i> Filtrar
+  </button>
+</div>
+
+<hr />
+
+<!-- Lista de requisitos -->
+<div class="lista">
+  <div class="card" *ngFor="let req of filtrados">
+    <div>
+      <h3>{{ req.titulo }}</h3>
+      <p><strong>Projeto:</strong> {{ req.projeto }}</p>
+      <p><strong>Tipo:</strong> {{ req.tipo }}</p>
+    </div>
+    <button (click)="verDetalhes(req.id)">
+      <i class="fas fa-eye"></i> Ver mais
+    </button>
+  </div>
+
+  <p *ngIf="filtrados.length === 0" class="nenhum">Nenhum requisito encontrado.</p>
+</div>

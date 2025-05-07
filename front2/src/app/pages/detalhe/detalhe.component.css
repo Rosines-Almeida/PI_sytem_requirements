@@ -1,0 +1,47 @@
+.detalhe-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.card-detalhe {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.card-detalhe p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.descricao {
+  background-color: #f1f1f1;
+  padding: 12px;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  margin-top: 8px;
+  font-family: 'Courier New', monospace;
+}
+
+.voltar {
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.voltar:hover {
+  background-color: #28a745;
+}

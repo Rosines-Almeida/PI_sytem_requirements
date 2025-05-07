@@ -1,0 +1,53 @@
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  color: #28a745;
+}
+
+.card p {
+  margin: 4px 0;
+}
+
+.card button {
+  background-color: #28a745;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card button:hover {
+  background-color: #218838;
+}
+
+.nenhum {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  margin-top: 20px;
+}
