@@ -2,7 +2,6 @@ const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const { environment } = require('./enviroment');
 
 const app = express();
 const PORT = 3000;
@@ -10,21 +9,23 @@ const PORT = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Conexão com o MySQL
+
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: environment.DB_PASSWORD, // coloque sua senha
+  password: 'Umy159'  ,  
   database: 'requisitos_db'
 });
 
-// Testa conexão
+
 db.connect(err => {
   if (err) throw err;
   console.log('Conectado ao MySQL');
 });
 
-// Rota: criar requisito
+/*
+Método para criar requisitos
+*/
 app.post('/requisitos', (req, res) => {
   const { titulo, projeto, tipo, descricao, dataEntrega } = req.body;
   const sql = 'INSERT INTO requisitos (titulo, projeto, tipo, descricao, dataEntrega) VALUES (?, ?, ?, ?, ?)';
@@ -34,7 +35,9 @@ app.post('/requisitos', (req, res) => {
   });
 });
 
-// Rota: listar todos
+/*
+Método para buscar requisitos
+*/
 app.get('/requisitos', (req, res) => {
   db.query('SELECT * FROM requisitos', (err, results) => {
     if (err) {
@@ -45,7 +48,10 @@ app.get('/requisitos', (req, res) => {
     }
   });
 });
-// Rota: detalhe por id
+
+/*
+Método para buscar detalhes requisitos
+*/
 app.get('/requisitos/:id', (req, res) => {
   db.query('SELECT * FROM requisitos WHERE id = ?', [req.params.id], (err, results) => {
     if (err) return res.status(500).send(err);

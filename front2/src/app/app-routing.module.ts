@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', component: FormularioComponent },
   { path: 'painel', component: PainelComponent },
   { path: 'detalhe/:id', component: DetalheComponent },
-  { path: '**', redirectTo: '' } // redireciona se rota não existir
+  { path: '**', redirectTo: '' } 
 ];
 
 @NgModule({

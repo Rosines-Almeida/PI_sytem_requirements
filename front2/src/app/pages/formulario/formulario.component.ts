@@ -55,11 +55,5 @@ export class FormularioComponent {
       }
     });
 
-     // limpa o formulário
-    //  this.tipo = '';
-    //  this.projeto = '';
-    //  this.descricao = '';
-    //  this.titulo = '';
-  
   }
 }

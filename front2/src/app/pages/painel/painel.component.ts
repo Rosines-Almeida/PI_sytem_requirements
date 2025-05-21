@@ -11,11 +11,10 @@ export class PainelComponent implements OnInit {
   requisitos: any[] = [];
   filtrados: any[] = [];
 
-  // Filtros
   filtroProjeto = '';
   filtroTipo = '';
 
-  // Opções dos filtros
+  
   projetos: any[] = ['Projeto A', 'Projeto B', 'Projeto C'];
   tipos: string[] = ['Funcional', 'Não funcional'];
 
@@ -25,9 +24,6 @@ export class PainelComponent implements OnInit {
     const dados = JSON.parse(localStorage.getItem('requisitos') || '[]');
     this.requisitos = dados;
     this.filtrados = dados;
-
-    // Preenche lista de projetos únicos
-    // this.projetos = [...new Set(dados.map((r: any) => r.projeto))];
     this.carregarRequisitos();
   }
 
